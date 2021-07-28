@@ -1,4 +1,4 @@
-# vscode使用方法
+# vscode 使用方法
 
 ## 快捷键
 
@@ -7,13 +7,13 @@
 
 ## 插件安装
 
-> - <font color=steelblue>vetur：</font>  <font color=#7ec699 blue>.vue 文件语法识别</font>
-
+> - <font color=steelblue>vetur：</font> <font color=#7ec699 blue>.vue 文件语法识别</font>
 
 ## vscode 格式化代码 与 eslint 有冲突的问题解决
-解决方法：在setting.json中加入下面的配置就可以了
 
-```js 
+解决方法：在 setting.json 中加入下面的配置就可以了
+
+```js
 {
    "vetur.format.defaultFormatterOptions": {
       "prettier": {
@@ -24,18 +24,19 @@
     },
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "vetur.format.defaultFormatter.js": "vscode-typescript",
-    "vetur.format.defaultFormatter.html": "js-beautify-html" 
+    "vetur.format.defaultFormatter.html": "js-beautify-html"
 }
 ```
 
-但是这个时候会发现vue文件是可以了，可是js文件还是无效，找到以下方法解决之：
-1、安装prettier插件
+但是这个时候会发现 vue 文件是可以了，可是 js 文件还是无效，找到以下方法解决之：
+1、安装 prettier 插件
 
 ```js
 npm install --save-dev  prettier
 
 ```
-2、在根目录新增 .prettierrc.json文件，配置如下：
+
+2、在根目录新增 .prettierrc.json 文件，配置如下：
 
 ```js
 {
@@ -129,4 +130,61 @@ vscode-icons	文件图标，方便定位文件
 vscode-random	随机字符串生成器
 vscode-styled-components	styled-components高亮支持
 vscode-styled-jsx	styled-jsx高亮支持
+```
+
+### 片段 snippet
+
+```json
+"Print to vue3 base template": {
+  "scope": "javascript,typescript,vue",
+  "prefix": "v3b",
+  "body": [
+    "<template>",
+      "\t<div class=\"\">",
+      "\r\t</div>",
+    "</template>",
+
+    "<script lang=\"ts\">",
+
+    "import { defineComponent, reactive } from 'vue'",
+
+    "export default defineComponent({",
+      "\r\tname: '$1',",
+      "\tsetup() {",
+        "\t\tconst data = reactive({",
+
+        "\r\t\t})",
+        "\r\t\treturn {",
+          "\t\t\tdata",
+        "\t\t}",
+
+      "\t}",
+    "})",
+    "</script>",
+    "<style lang=\"scss\" scoped>\r\r</style>",
+  ],
+  "description": "vue3 base template"
+}
+```
+
+```json
+
+"Print to vue base template": {
+  "prefix": "vb",
+  "body": [
+    "<template>",
+      "\t<div class=\"$1\">",
+      "\r\t</div>",
+    "</template>",
+
+    "\r<script>",
+
+    "export default {",
+    "\r}",
+    "</script>",
+    "\r<style lang=\"scss\" scoped>\r\r</style>",
+  ],
+  "description": "vue base template"
+}
+
 ```
