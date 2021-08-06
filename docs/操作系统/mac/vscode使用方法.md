@@ -50,6 +50,14 @@ npm install --save-dev  prettier
 
 ```
 名称	简述
+Iconify IntelliSense - Iconify 图标插件
+windicss IntelliSense - windicss 提示插件
+I18n-ally - i18n 插件
+Vetur - vue 开发必备 （也可以选择 Volar）
+ESLint - 脚本代码检查
+Prettier - 代码格式化
+Stylelint - css 格式化
+DotENV - .env 文件 高亮
 Auto Close Tag	自动闭合HTML标签
 Auto Import	Typescript自动import提示
 Auto Rename Tag	修改HTML标签时，自动修改匹配的标签

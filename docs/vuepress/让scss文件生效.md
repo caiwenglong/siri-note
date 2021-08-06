@@ -15,3 +15,5 @@ export default ({
   siteData // site metadata
 }) => {}
 ```
+
+<sr-button></sr-button>
